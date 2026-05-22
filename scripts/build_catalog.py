@@ -57,6 +57,18 @@ EXACT_META: dict[str, dict[str, Any]] = {
     "ENT-SHORT": {"description": "Enterizo short", "category": "Enterizos", "audience": "Mujer", "price": 113000},
 }
 
+LONG_ENTERIZO_CODES = {
+    "ENT-066G",
+    "ENT-062 A",
+    "ENT-062 R",
+    "ENT-068 V",
+    "ENT-068 N",
+    "ENT-066 AN",
+    "ENT-068N",
+    "ENT-068 AR",
+    "ENT-066 AR",
+}
+
 COLOR_SUFFIXES = {
     "AR": "Azul rey",
     "N": "Negro",
@@ -228,6 +240,10 @@ def base_reference(code: str) -> str:
     return code.split("-", 1)[0].strip()
 
 
+def lookup_code(code: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"\s*-\s*", "-", code.upper())).strip()
+
+
 def exact_key(code: str) -> str:
     compact = code.replace(" ", "")
     if compact.startswith("BL-028"):
@@ -253,11 +269,13 @@ def color_from_code(code: str) -> str:
 
 def product_from_code(code: str, item: ExtractedImage) -> dict[str, Any]:
     base = base_reference(code)
-    metadata = EXACT_META.get(exact_key(code)) or REFERENCE_META.get(base) or {}
+    metadata_key = "ENT-LARGO" if lookup_code(code) in LONG_ENTERIZO_CODES else exact_key(code)
+    metadata = EXACT_META.get(metadata_key) or REFERENCE_META.get(base) or {}
+    product_base = metadata_key if metadata_key.startswith("ENT-") else base
     return {
         "id": f"{item.page_key}-{slugify(code)}",
         "code": code,
-        "baseReference": base,
+        "baseReference": product_base,
         "description": metadata.get("description", "Prenda deportiva UFS"),
         "category": metadata.get("category", "Otros"),
         "audience": metadata.get("audience", "Unisex"),
