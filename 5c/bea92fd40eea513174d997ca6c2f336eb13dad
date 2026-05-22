@@ -1,0 +1,19 @@
+vercel.json
+  s_c6ce68135f3373::t_0c553f3eab0c77 2-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "5cbea92fd40eea513174d997ca6c2f336eb13dad",
+  "prompts": {},
+  "sessions": {
+    "s_c6ce68135f3373": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e4c94-c3f5-7642-8a6a-87de3833b8f0",
+        "model": "gpt-5.5"
+      },
+      "human_author": "David Gómez González <davidgg312@gmail.com>"
+    }
+  }
+}
