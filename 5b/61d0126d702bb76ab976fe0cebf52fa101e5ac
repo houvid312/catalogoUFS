@@ -1,0 +1,31 @@
+public/data/products.json
+  s_a74beabb75e13d::t_cd4d1377de99f8 225,230,236,1024,1029,1035,1041,1046,1052,3387,3392,3398,3438,3443,3449,3574,3579,3585,3591,3596,3602,3608,3613,3619,3795,3800,3806,3812,3817,3823,4320
+public/data/products.reviewed.json
+  s_a74beabb75e13d::t_cd4d1377de99f8 225,230,236,1024,1029,1035,1041,1046,1052,3387,3392,3398,3438,3443,3449,3574,3579,3585,3591,3596,3602,3608,3613,3619,3795,3800,3806,3812,3817,3823,4320
+scripts/build_catalog.py
+  s_c6ce68135f3373::t_25934ea90f0da9 60-71,243-246,272-274,278
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "5b61d0126d702bb76ab976fe0cebf52fa101e5ac",
+  "prompts": {},
+  "sessions": {
+    "s_a74beabb75e13d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "019e4c94-c3f5-7642-8a6a-87de3833b8f0",
+        "model": "unknown"
+      },
+      "human_author": "David Gómez González <davidgg312@gmail.com>"
+    },
+    "s_c6ce68135f3373": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e4c94-c3f5-7642-8a6a-87de3833b8f0",
+        "model": "gpt-5.5"
+      },
+      "human_author": "David Gómez González <davidgg312@gmail.com>"
+    }
+  }
+}
